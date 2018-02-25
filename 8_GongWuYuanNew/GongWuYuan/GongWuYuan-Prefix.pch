@@ -1,0 +1,95 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#import "function.h"
+#define ISLANDSCAPE self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation ==                        UIInterfaceOrientationLandscapeRight
+
+
+#define ScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define APPLICATION_HEIGHT [ UIScreen mainScreen ].applicationFrame.size.height
+
+#define RK_IS_IPAD ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+#define RK_IS_IPHONE ([UIDevice currentDevice].userInterfaceIdiom != UIUserInterfaceIdiomPad)
+
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//---------------color----------------
+#define LABELCOLOR [UIColor darkGrayColor]
+#define TESTPAPERINFOBUTTONCOLOR [UIColor colorWithRed:147/255.0f green:224/255.0f blue:225/255.0f alpha:1.0f]
+#define CHOICEBUTTONTITLECOLOR [UIColor whiteColor]
+
+#define TESTCOLOR [UIColor redColor]
+//---------------datebase macro----------------------
+
+//problem table
+#define PID         0   //primary key
+#define PIDINTEST   1
+#define TID         2   //foreign key
+#define PROBLEM_T   3
+#define CHOICE_A_T  4
+#define CHOICE_B_T  5
+#define CHOICE_C_T  6
+#define CHOICE_D_T  7
+#define ANSWER      8
+#define ANALYSE_T   9
+#define PROBLEM_P   10
+#define CHOICE_A_P  11
+#define CHOICE_B_P  12
+#define CHOICE_C_P  13
+#define CHOICE_D_P  14
+#define ANALYSE_P   15
+#define TYPE        16
+#define STATUS      17
+#define MID         18  //foreign key
+
+#define CHOICE_TYPE 19
+#define CUS_ANSWER 20
+#define FAVORITE   21
+//material table
+#define METERIAL_T 22
+#define METERIAL_P 23
+
+#define DB_KEY "XYZ"
+#define DB_KEY_LENGTH 3
+#define PARAGRAPH_SPACE 20
+#define LEFT_SPACE self.bounds.size.width >414 ? self.bounds.size.width*0.08/2:self.bounds.size.width*0.03
+#define INTERNAL_LEFT_SPACE self.bounds.size.width >414 ? self.bounds.size.width*0.11:self.bounds.size.width*0.3/2
+#define UP_SPACE 10
+#define CHOICEBUTTONDIAMETER    30
+#define MULTI_CHOICE_BUTTON_WIDTH 60
+#define MULTI_CHOICE_BUTTON_HEIGHT MULTI_CHOICE_BUTTON_WIDTH/2
+#define PAPERINFO_BUTTON_WIDTH  80
+#define PAPERINFO_BUTTON_HEIGHT 30
+
+#define TEXTWIDTH self.bounds.size.width >414 ? self.bounds.size.width*0.85:self.bounds.size.width*0.8
+#define TEXTWIDTH2 self.bounds.size.width >414 ? (self.bounds.size.width*0.85+self.bounds.size.width*(0.11-0.04)):(self.bounds.size.width*0.8+self.bounds.size.width*(0.15-0.03))
+#define TEXTWIDTH3 self.bounds.size.width >414 ? self.bounds.size.width*0.95:self.bounds.size.width*0.9
+//------font-----------------------------------
+#define JKFONT_1 [UIFont fontWithName:@"AppleGothic" size:16]
+#define JKFONT_INFOVIEW [UIFont fontWithName:@"Avenir-Heavy" size:18]
+#define JKFONT_3 [UIFont fontWithName:@"Avenir-Book" size:14]
+//------ios7 feature----
+#define BecauseOfBarTranNO 64
+//#define ADMOBID @"ca-app-pub-2492190986050641/5025889617"
+#define ADMOB_APP_ID @"ca-app-pub-2492190986050641~9595690019"
+#define ADMOB_INTER_AD_ID @"ca-app-pub-2492190986050641/8423352913"
+//=============
+
+
+
+
